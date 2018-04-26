@@ -38,6 +38,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uHg-0e-ngQ" kind="show" identifier="showPhotoDetail" id="atN-zY-Cak"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -64,6 +67,14 @@
                 </customObject>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="155.17241379310346"/>
+        </scene>
+        <!--PhotoDetailView-->
+        <scene sceneID="10n-Dp-O5Y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PhotoDetailView" id="uHg-0e-ngQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjF-1B-f7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="713" y="155"/>
         </scene>
     </scenes>
 </document>
