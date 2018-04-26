@@ -16,6 +16,7 @@
 		18D3C4B42091839600F33D26 /* PhotoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4B32091839600F33D26 /* PhotoListInteractor.swift */; };
 		18D3C4B8209183D300F33D26 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4B7209183D300F33D26 /* PhotoDetailViewController.swift */; };
 		18D3C4BA209183E600F33D26 /* PhotoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C4B9209183E600F33D26 /* PhotoDetailView.storyboard */; };
+		18D3C4BC20918A0700F33D26 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4BB20918A0700F33D26 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		18D3C4B32091839600F33D26 /* PhotoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListInteractor.swift; sourceTree = "<group>"; };
 		18D3C4B7209183D300F33D26 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		18D3C4B9209183E600F33D26 /* PhotoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetailView.storyboard; sourceTree = "<group>"; };
+		18D3C4BB20918A0700F33D26 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		18D3C4A92091820500F33D26 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				18D3C4BB20918A0700F33D26 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D3C4BC20918A0700F33D26 /* Constants.swift in Sources */,
 				18D3C486209180B100F33D26 /* AppDelegate.swift in Sources */,
 				18D3C4B42091839600F33D26 /* PhotoListInteractor.swift in Sources */,
 				18D3C4B8209183D300F33D26 /* PhotoDetailViewController.swift in Sources */,
