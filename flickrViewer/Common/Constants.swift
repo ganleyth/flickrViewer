@@ -14,6 +14,8 @@ struct Constants {
         static let apiKey = "1508443e49213ff84d566777dc211f2a"
         static let apiKeyKey = "api_key"
         static let endpointURLString = "https://api.flickr.com/services/rest/"
+        static let pageKey = "page"
+        static let perPageKey = "per_page"
         static let textKey = "text"
     }
 }
