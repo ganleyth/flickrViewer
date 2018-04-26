@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wfm-KV-XXj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Mlt-B2-KTV">
+            <objects>
+                <viewController id="Wfm-KV-XXj" customClass="PhotoListViewController" customModule="flickrViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AXL-4d-f4b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-Ra-Gf3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="thumbnailCell" textLabel="Qn2-Xr-Dym" style="IBUITableViewCellStyleDefault" id="eCM-7n-wu2">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCM-7n-wu2" id="9pV-61-dEA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qn2-Xr-Dym">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="99.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="trailing" secondItem="l9O-Ra-Gf3" secondAttribute="trailing" id="28j-Ii-U5n"/>
+                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="bottom" secondItem="l9O-Ra-Gf3" secondAttribute="bottom" id="I9D-nD-9A8"/>
+                            <constraint firstItem="l9O-Ra-Gf3" firstAttribute="leading" secondItem="OZD-nK-Ke2" secondAttribute="leading" id="J6b-lR-OFi"/>
+                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="top" secondItem="l9O-Ra-Gf3" secondAttribute="top" constant="20" id="k6b-VO-UZd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OZD-nK-Ke2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="flickr Viewer" id="Nq9-kh-jdO"/>
+                    <connections>
+                        <outlet property="interactor" destination="NvM-FL-xgJ" id="6f6-Vs-3Je"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6v-hQ-mfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="NvM-FL-xgJ" customClass="PhotoListInteractor" customModule="flickrViewer" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Wfm-KV-XXj" id="ipz-8N-uWh"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="155.17241379310346"/>
+        </scene>
+    </scenes>
+</document>

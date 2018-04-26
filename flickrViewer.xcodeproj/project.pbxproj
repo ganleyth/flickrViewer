@@ -11,6 +11,11 @@
 		18D3C48B209180B100F33D26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C489209180B100F33D26 /* Main.storyboard */; };
 		18D3C48D209180B300F33D26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C48C209180B300F33D26 /* Assets.xcassets */; };
 		18D3C490209180B300F33D26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C48E209180B300F33D26 /* LaunchScreen.storyboard */; };
+		18D3C4B02091837C00F33D26 /* PhotoListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C4AF2091837C00F33D26 /* PhotoListView.storyboard */; };
+		18D3C4B22091838900F33D26 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4B12091838900F33D26 /* PhotoListViewController.swift */; };
+		18D3C4B42091839600F33D26 /* PhotoListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4B32091839600F33D26 /* PhotoListInteractor.swift */; };
+		18D3C4B8209183D300F33D26 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3C4B7209183D300F33D26 /* PhotoDetailViewController.swift */; };
+		18D3C4BA209183E600F33D26 /* PhotoDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D3C4B9209183E600F33D26 /* PhotoDetailView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,11 @@
 		18D3C491209180B300F33D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D3C496209180B300F33D26 /* flickrViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flickrViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D3C49C209180B300F33D26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D3C4AF2091837C00F33D26 /* PhotoListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoListView.storyboard; sourceTree = "<group>"; };
+		18D3C4B12091838900F33D26 /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		18D3C4B32091839600F33D26 /* PhotoListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListInteractor.swift; sourceTree = "<group>"; };
+		18D3C4B7209183D300F33D26 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		18D3C4B9209183E600F33D26 /* PhotoDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoDetailView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				18D3C4AB2091822F00F33D26 /* ListView */,
-				18D3C4AC2091823B00F33D26 /* PhotoView */,
+				18D3C4AC2091823B00F33D26 /* PhotoDetailView */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -137,15 +147,20 @@
 		18D3C4AB2091822F00F33D26 /* ListView */ = {
 			isa = PBXGroup;
 			children = (
+				18D3C4AF2091837C00F33D26 /* PhotoListView.storyboard */,
+				18D3C4B12091838900F33D26 /* PhotoListViewController.swift */,
+				18D3C4B32091839600F33D26 /* PhotoListInteractor.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
 		};
-		18D3C4AC2091823B00F33D26 /* PhotoView */ = {
+		18D3C4AC2091823B00F33D26 /* PhotoDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				18D3C4B9209183E600F33D26 /* PhotoDetailView.storyboard */,
+				18D3C4B7209183D300F33D26 /* PhotoDetailViewController.swift */,
 			);
-			path = PhotoView;
+			path = PhotoDetailView;
 			sourceTree = "<group>";
 		};
 		18D3C4AD2091827100F33D26 /* Model */ = {
@@ -243,8 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D3C4B02091837C00F33D26 /* PhotoListView.storyboard in Resources */,
 				18D3C490209180B300F33D26 /* LaunchScreen.storyboard in Resources */,
 				18D3C48D209180B300F33D26 /* Assets.xcassets in Resources */,
+				18D3C4BA209183E600F33D26 /* PhotoDetailView.storyboard in Resources */,
 				18D3C48B209180B100F33D26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +281,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D3C486209180B100F33D26 /* AppDelegate.swift in Sources */,
+				18D3C4B42091839600F33D26 /* PhotoListInteractor.swift in Sources */,
+				18D3C4B8209183D300F33D26 /* PhotoDetailViewController.swift in Sources */,
+				18D3C4B22091838900F33D26 /* PhotoListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
