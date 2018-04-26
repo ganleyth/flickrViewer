@@ -44,10 +44,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="trailing" secondItem="l9O-Ra-Gf3" secondAttribute="trailing" id="28j-Ii-U5n"/>
-                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="bottom" secondItem="l9O-Ra-Gf3" secondAttribute="bottom" id="I9D-nD-9A8"/>
-                            <constraint firstItem="l9O-Ra-Gf3" firstAttribute="leading" secondItem="OZD-nK-Ke2" secondAttribute="leading" id="J6b-lR-OFi"/>
-                            <constraint firstItem="OZD-nK-Ke2" firstAttribute="top" secondItem="l9O-Ra-Gf3" secondAttribute="top" constant="20" id="k6b-VO-UZd"/>
+                            <constraint firstAttribute="trailing" secondItem="l9O-Ra-Gf3" secondAttribute="trailing" id="28j-Ii-U5n"/>
+                            <constraint firstAttribute="bottom" secondItem="l9O-Ra-Gf3" secondAttribute="bottom" id="I9D-nD-9A8"/>
+                            <constraint firstItem="l9O-Ra-Gf3" firstAttribute="leading" secondItem="AXL-4d-f4b" secondAttribute="leading" id="J6b-lR-OFi"/>
+                            <constraint firstAttribute="top" secondItem="l9O-Ra-Gf3" secondAttribute="top" id="k6b-VO-UZd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OZD-nK-Ke2"/>
                     </view>
