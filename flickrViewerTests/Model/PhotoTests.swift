@@ -11,6 +11,38 @@ import XCTest
 
 class PhotoTests: XCTestCase {
     
+    func testPhotoEquatableDetectsEquality() {
+        let photo0 = Photo(id: "26878581007",
+                                   title: "IMG_5389",
+                                   farmID: 1,
+                                   serverID: "827",
+                                   secret: "65f983b4b7")
+        
+        let photo1 = Photo(id: "26878581007",
+                                   title: "IMG_5389",
+                                   farmID: 1,
+                                   serverID: "827",
+                                   secret: "65f983b4b7")
+        
+        XCTAssertEqual(photo0, photo1)
+    }
+    
+    func testPhotoEquatableDetectsInequality() {
+        let photo0 = Photo(id: "26878581007",
+                                   title: "IMG_5389",
+                                   farmID: 1,
+                                   serverID: "827",
+                                   secret: "65f983b4b7")
+        
+        let photo1 = Photo(id: "40847624005",
+                                   title: "IMG_5391",
+                                   farmID: 1,
+                                   serverID: "832",
+                                   secret: "314de79c7d")
+        
+        XCTAssertNotEqual(photo0, photo1)
+    }
+    
     func testDecodingPhotos() {
         let bundle = Bundle(for: type(of: self))
         guard let sampleDataPath = bundle.path(forResource: "SampleSearchResponse", ofType: "json") else { XCTFail(); return }
