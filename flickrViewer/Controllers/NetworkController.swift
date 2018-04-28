@@ -9,26 +9,12 @@
 import Foundation
 
 class NetworkController {
-    
-    static let shared = NetworkController()
-    
-    lazy var session: SessionProtocol = URLSession.shared
-    
-    func get(url: URL, with completion: @escaping (_ data: Data?, _ error: Error?) -> Void) {
-        let dataTask = session.dataTask(with: url) { (data, _, error) in
+
+    static func get(url: URL, with completion: @escaping (_ data: Data?, _ error: Error?) -> Void) {
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, error) in
             completion(data, error)
         }
         
         dataTask.resume()
     }
 }
-
-
-/**
- Adopt for dependency injection
- */
-protocol SessionProtocol {
-    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
-}
-
-extension URLSession: SessionProtocol {}
