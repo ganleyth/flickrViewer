@@ -43,6 +43,11 @@ struct Photo: Decodable {
     let serverID: String
     let secret: String
     
+    var imageURL: URL? {
+        let urlString = "https://farm\(farmID).staticflickr.com/\(serverID)/\(id)_\(secret)_m.jpg"
+        return URL(string: urlString)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case title

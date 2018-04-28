@@ -79,4 +79,15 @@ class PhotoTests: XCTestCase {
         XCTAssertEqual(expectedPhoto1, photos[1])
         XCTAssertEqual(expectedPhoto2, photos[2])
     }
+    
+    func testImageURL() {
+        let photo = Photo(id: "26878581007",
+                                   title: "IMG_5389",
+                                   farmID: 1,
+                                   serverID: "827",
+                                   secret: "65f983b4b7")
+        
+        let expectedURL = URL(string: "https://farm1.staticflickr.com/827/26878581007_65f983b4b7_m.jpg")
+        XCTAssertEqual(expectedURL, photo.imageURL)
+    }
 }
