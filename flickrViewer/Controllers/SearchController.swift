@@ -11,21 +11,13 @@ import Foundation
 class SearchController {
     
     static func search(searchTerm: String, page: Int, completion: @escaping (_ photos: [Photo]?) -> Void) {
-        let params: [String: String] = [
-            Constants.FlickrAPI.apiKeyKey: Constants.FlickrAPI.apiKey,
-            Constants.FlickrAPI.textKey: searchTerm,
-            Constants.FlickrAPI.pageKey: "\(page)",
-            Constants.FlickrAPI.perPageKey: "25"
-        ]
-        
-        guard let endPoint = URL(string: Constants.FlickrAPI.endpointURLString) else {
+        guard let endPoint = buildURLFor(searchTerm: searchTerm, page: page) else {
             assertionFailure("Could not create endpoint URL from constant.")
             completion(nil)
             return
         }
         
-        let endPointWithParams = endPoint.appendingParameters(params)
-        NetworkController.get(url: endPointWithParams) { (data, error) in
+        NetworkController.get(url: endPoint) { (data, error) in
             var photos: [Photo]? = nil
             defer {
                 DispatchQueue.main.async {
@@ -33,11 +25,7 @@ class SearchController {
                 }
             }
             
-            if let error = error {
-                print("Error fetching photo objects: \(error.localizedDescription)")
-                return
-            }
-            
+            if let error = error { print("Error fetching photo objects: \(error.localizedDescription)"); return }
             guard let data = data else { print("Returned data is nil."); return }
             
             do {
@@ -48,5 +36,18 @@ class SearchController {
                 return
             }
         }
+    }
+    
+    static func buildURLFor(searchTerm: String, page: Int) -> URL? {
+        guard let endPoint = URL(string: Constants.FlickrAPI.endpointURLString) else { return nil }
+        
+        let params: [String: String] = [
+            Constants.FlickrAPI.apiKeyKey: Constants.FlickrAPI.apiKey,
+            Constants.FlickrAPI.textKey: searchTerm,
+            Constants.FlickrAPI.pageKey: "\(page)",
+            Constants.FlickrAPI.perPageKey: "25"
+        ]
+        
+        return endPoint.appendingParameters(params)
     }
 }

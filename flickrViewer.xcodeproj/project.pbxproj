@@ -10,6 +10,7 @@
 		181D53FC2099494A00ADB2FF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D53FB2099494A00ADB2FF /* SearchController.swift */; };
 		181D53FE209953B200ADB2FF /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D53FD209953B200ADB2FF /* URL+AppExtensions.swift */; };
 		181D5401209954B100ADB2FF /* URL+AppExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D5400209954B100ADB2FF /* URL+AppExtensionsTests.swift */; };
+		181D540320995A9000ADB2FF /* SearchControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D540220995A9000ADB2FF /* SearchControllerTests.swift */; };
 		183CE14C2093EC45009E7503 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CE14B2093EC45009E7503 /* PhotoTests.swift */; };
 		183CE1512093EDC6009E7503 /* SampleSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 183CE1502093EDC6009E7503 /* SampleSearchResponse.json */; };
 		183CE1532093F902009E7503 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CE1522093F902009E7503 /* NetworkController.swift */; };
@@ -41,6 +42,7 @@
 		181D53FB2099494A00ADB2FF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		181D53FD209953B200ADB2FF /* URL+AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AppExtensions.swift"; sourceTree = "<group>"; };
 		181D5400209954B100ADB2FF /* URL+AppExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AppExtensionsTests.swift"; sourceTree = "<group>"; };
+		181D540220995A9000ADB2FF /* SearchControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerTests.swift; sourceTree = "<group>"; };
 		183CE14B2093EC45009E7503 /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		183CE1502093EDC6009E7503 /* SampleSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = SampleSearchResponse.json; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/SampleSearchResponse.json"; sourceTree = "<group>"; };
 		183CE1522093F902009E7503 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		18D3C4AE2091827600F33D26 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				181D540220995A9000ADB2FF /* SearchControllerTests.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			files = (
 				183CE14C2093EC45009E7503 /* PhotoTests.swift in Sources */,
 				181D5401209954B100ADB2FF /* URL+AppExtensionsTests.swift in Sources */,
+				181D540320995A9000ADB2FF /* SearchControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
