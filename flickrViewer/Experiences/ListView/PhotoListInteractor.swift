@@ -62,7 +62,7 @@ extension PhotoListInteractor: UISearchBarDelegate {
         SearchController.search(searchTerm: searchTerm, page: page) { [weak self] (photos) in
             guard let this = self else { return }
             
-            guard let photos = photos else {
+            guard let photos = photos, !photos.isEmpty else {
                 let title = "No Results Found"
                 let message = "Could not find results for that search term. Please try again."
                 this.photoListViewController.presentBasicInfoAlertWith(title: title, message: message)
@@ -71,6 +71,7 @@ extension PhotoListInteractor: UISearchBarDelegate {
             
             this.photos = photos
             this.photoListViewController.tableView.reloadData()
+            this.photoListViewController.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
         }
     }
 }
