@@ -10,17 +10,67 @@ import UIKit
 
 class PhotoListInteractor: NSObject {
     
-    @IBOutlet weak var viewController: PhotoListViewController!
+    @IBOutlet weak var photoListViewController: PhotoListViewController!
+    private var photos: [Photo] = []
+    private var page: Int = 0
+    
+    private lazy var tableBackgroundView: UIView = {
+        let view = UIView(frame: photoListViewController.tableView.frame)
+        view.backgroundColor = .white
+        let label = UILabel()
+        view.addSubview(label)
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 24)
+        label.text = "Begin your flickr search by searching for specific keywords"
+        label.textAlignment = .center
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32).isActive = true
+        view.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 32).isActive = true
+        return view
+    }()
 }
 
 // MARK: - Table view data source
 extension PhotoListInteractor: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        photoListViewController.tableView.backgroundView = photos.isEmpty ? tableBackgroundView : nil
+        return photos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "thumbnailCell", for: indexPath)
+        let photo = photos[indexPath.row]
+        cell.textLabel?.text = photo.title
+        if let imageURL = photo.imageURL {
+            cell.imageView?.loadImage(at: imageURL)
+        }
+        
+        return cell
+    }
+}
+
+// MARK: - Search bar delegate
+extension PhotoListInteractor: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        SearchController.search(searchTerm: searchTerm, page: page) { [weak self] (photos) in
+            guard let this = self else { return }
+            
+            guard let photos = photos else {
+                let title = "No Results Found"
+                let message = "Could not find results for that search term. Please try again."
+                this.photoListViewController.presentBasicInfoAlertWith(title: title, message: message)
+                return
+            }
+            
+            this.photos = photos
+            this.photoListViewController.tableView.reloadData()
+        }
     }
 }

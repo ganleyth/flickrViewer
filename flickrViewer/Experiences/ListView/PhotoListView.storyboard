@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Photo List View Controller-->
         <scene sceneID="Mlt-B2-KTV">
             <objects>
                 <viewController id="Wfm-KV-XXj" customClass="PhotoListViewController" customModule="flickrViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-Ra-Gf3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="thumbnailCell" textLabel="Qn2-Xr-Dym" style="IBUITableViewCellStyleDefault" id="eCM-7n-wu2">
@@ -43,26 +43,40 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NvM-FL-xgJ" id="NUx-QC-f9i"/>
+                                </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Search keyword" translatesAutoresizingMaskIntoConstraints="NO" id="BM0-Pi-0m4">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NvM-FL-xgJ" id="6TL-kI-CjH"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="l9O-Ra-Gf3" secondAttribute="trailing" id="28j-Ii-U5n"/>
+                            <constraint firstItem="BM0-Pi-0m4" firstAttribute="top" secondItem="OZD-nK-Ke2" secondAttribute="top" id="CrK-gZ-XvK"/>
                             <constraint firstAttribute="bottom" secondItem="l9O-Ra-Gf3" secondAttribute="bottom" id="I9D-nD-9A8"/>
                             <constraint firstItem="l9O-Ra-Gf3" firstAttribute="leading" secondItem="AXL-4d-f4b" secondAttribute="leading" id="J6b-lR-OFi"/>
-                            <constraint firstAttribute="top" secondItem="l9O-Ra-Gf3" secondAttribute="top" id="k6b-VO-UZd"/>
+                            <constraint firstItem="BM0-Pi-0m4" firstAttribute="leading" secondItem="OZD-nK-Ke2" secondAttribute="leading" id="PPR-kp-kRQ"/>
+                            <constraint firstItem="l9O-Ra-Gf3" firstAttribute="top" secondItem="BM0-Pi-0m4" secondAttribute="bottom" id="bHM-o2-jDF"/>
+                            <constraint firstItem="BM0-Pi-0m4" firstAttribute="trailing" secondItem="OZD-nK-Ke2" secondAttribute="trailing" id="hSH-f4-t6g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OZD-nK-Ke2"/>
                     </view>
                     <navigationItem key="navigationItem" title="flickr Viewer" id="Nq9-kh-jdO"/>
                     <connections>
                         <outlet property="interactor" destination="NvM-FL-xgJ" id="6f6-Vs-3Je"/>
+                        <outlet property="tableView" destination="l9O-Ra-Gf3" id="r94-xW-bTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6v-hQ-mfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="NvM-FL-xgJ" customClass="PhotoListInteractor" customModule="flickrViewer" customModuleProvider="target">
                     <connections>
-                        <outlet property="viewController" destination="Wfm-KV-XXj" id="ipz-8N-uWh"/>
+                        <outlet property="photoListViewController" destination="Wfm-KV-XXj" id="7TT-bW-nRG"/>
                     </connections>
                 </customObject>
             </objects>

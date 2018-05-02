@@ -11,7 +11,7 @@ import Foundation
 class SearchController {
     
     static func search(searchTerm: String, page: Int, completion: @escaping (_ photos: [Photo]?) -> Void) {
-        guard let endPoint = buildURLFor(searchTerm: searchTerm, page: page) else {
+        guard let endPoint = buildURLFor(searchTerm: searchTerm.lowercased(), page: page) else {
             assertionFailure("Could not create endpoint URL from constant.")
             completion(nil)
             return
@@ -43,6 +43,9 @@ class SearchController {
         
         let params: [String: String] = [
             Constants.FlickrAPI.apiKeyKey: Constants.FlickrAPI.apiKey,
+            Constants.FlickrAPI.methodKey: Constants.FlickrAPI.method,
+            Constants.FlickrAPI.formatKey: Constants.FlickrAPI.json,
+            Constants.FlickrAPI.noJSONCallback: "1",
             Constants.FlickrAPI.textKey: searchTerm,
             Constants.FlickrAPI.pageKey: "\(page)",
             Constants.FlickrAPI.perPageKey: "25"

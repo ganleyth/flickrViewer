@@ -10,5 +10,11 @@ import UIKit
 
 class PhotoListViewController: UIViewController {
 
-    @IBOutlet var interactor: PhotoListInteractor!
+    @IBOutlet private var interactor: PhotoListInteractor!
+    @IBOutlet var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+    }
 }
