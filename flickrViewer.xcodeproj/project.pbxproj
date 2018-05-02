@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181D53FC2099494A00ADB2FF /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D53FB2099494A00ADB2FF /* SearchController.swift */; };
 		183CE14C2093EC45009E7503 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CE14B2093EC45009E7503 /* PhotoTests.swift */; };
 		183CE1512093EDC6009E7503 /* SampleSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 183CE1502093EDC6009E7503 /* SampleSearchResponse.json */; };
 		183CE1532093F902009E7503 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183CE1522093F902009E7503 /* NetworkController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181D53FB2099494A00ADB2FF /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		183CE14B2093EC45009E7503 /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		183CE1502093EDC6009E7503 /* SampleSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = SampleSearchResponse.json; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/SampleSearchResponse.json"; sourceTree = "<group>"; };
 		183CE1522093F902009E7503 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				183CE1522093F902009E7503 /* NetworkController.swift */,
+				181D53FB2099494A00ADB2FF /* SearchController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				18D3C4B42091839600F33D26 /* PhotoListInteractor.swift in Sources */,
 				18D3C4B8209183D300F33D26 /* PhotoDetailViewController.swift in Sources */,
 				183CE1532093F902009E7503 /* NetworkController.swift in Sources */,
+				181D53FC2099494A00ADB2FF /* SearchController.swift in Sources */,
 				18D3C4B22091838900F33D26 /* PhotoListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
