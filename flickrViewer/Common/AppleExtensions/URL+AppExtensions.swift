@@ -9,7 +9,6 @@
 import Foundation
 
 extension URL {
-    
     /**
      Add any number of URL parameters to a base URL. Returns base URL if the composition fails.
      */
