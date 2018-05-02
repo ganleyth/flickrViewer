@@ -24,7 +24,9 @@ extension UIImageView {
                 let data = data,
                 let image = UIImage(data: data) else { return }
             
-            this.image = image
+            DispatchQueue.main.async {
+                this.image = image
+            }
         }
     }
 }

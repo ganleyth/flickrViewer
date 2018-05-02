@@ -16,5 +16,6 @@ class PhotoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "thumbnailCell")
     }
 }

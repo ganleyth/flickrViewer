@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhotoTableViewCell" customModule="flickrViewer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Npi-gI-EZr">
+                    <rect key="frame" x="8" y="4" width="92" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Npi-gI-EZr" secondAttribute="height" multiplier="1:1" id="7GM-hP-c0s"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6K-d6-p2m">
+                    <rect key="frame" x="108" y="38" width="259" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="s6K-d6-p2m" secondAttribute="bottom" constant="4" id="6ib-7a-1N2"/>
+                <constraint firstItem="Npi-gI-EZr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="91B-S6-OGa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="s6K-d6-p2m" secondAttribute="trailing" constant="8" id="CNd-kG-5rW"/>
+                <constraint firstItem="s6K-d6-p2m" firstAttribute="leading" secondItem="Npi-gI-EZr" secondAttribute="trailing" constant="8" id="YPg-VT-EYr"/>
+                <constraint firstItem="Npi-gI-EZr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="dXu-zT-L7q"/>
+                <constraint firstItem="s6K-d6-p2m" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="uYv-96-HBs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Npi-gI-EZr" secondAttribute="bottom" constant="4" id="urT-V9-2I5"/>
+                <constraint firstItem="s6K-d6-p2m" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="xIV-SG-dVm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="s6K-d6-p2m" id="otJ-bp-72p"/>
+                <outlet property="photoImageView" destination="Npi-gI-EZr" id="0BJ-gb-Cfe"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </view>
+    </objects>
+</document>

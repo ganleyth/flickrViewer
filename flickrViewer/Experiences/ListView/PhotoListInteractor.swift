@@ -43,12 +43,12 @@ extension PhotoListInteractor: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "thumbnailCell", for: indexPath)
-        let photo = photos[indexPath.row]
-        cell.textLabel?.text = photo.title
-        if let imageURL = photo.imageURL {
-            cell.imageView?.loadImage(at: imageURL)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "thumbnailCell", for: indexPath) as? PhotoTableViewCell else {
+            assertionFailure("Could not dequeue a reusable photo table view cell.")
+            return PhotoTableViewCell()
         }
+        let photo = photos[indexPath.row]
+        cell.configure(with: photo)
         
         return cell
     }
