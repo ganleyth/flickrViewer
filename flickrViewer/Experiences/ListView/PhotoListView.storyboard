@@ -23,6 +23,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="NvM-FL-xgJ" id="NUx-QC-f9i"/>
+                                    <outlet property="delegate" destination="NvM-FL-xgJ" id="GLl-eQ-Eoy"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search keyword" translatesAutoresizingMaskIntoConstraints="NO" id="BM0-Pi-0m4">

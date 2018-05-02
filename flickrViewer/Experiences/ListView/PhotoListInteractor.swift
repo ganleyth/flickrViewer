@@ -13,6 +13,7 @@ class PhotoListInteractor: NSObject {
     @IBOutlet weak var photoListViewController: PhotoListViewController!
     private var photos: [Photo] = []
     private var page: Int = 0
+    private var currentSearchTerm: String?
     
     private lazy var tableBackgroundView: UIView = {
         let view = UIView(frame: photoListViewController.tableView.frame)
@@ -54,11 +55,32 @@ extension PhotoListInteractor: UITableViewDataSource {
     }
 }
 
+// MARK: - Table view delegate
+extension PhotoListInteractor: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // increment the page when the user views the 25th cell of the current page
+        if indexPath.row == page * 25 + 24 {
+            page += 1
+            search()
+        }
+    }
+}
+
 // MARK: - Search bar delegate
 extension PhotoListInteractor: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
+        currentSearchTerm = searchBar.text
+        page = 0
+        search()
+    }
+}
+
+// MARK: - Private
+private extension PhotoListInteractor {
+    
+    func search() {
+        guard let searchTerm = currentSearchTerm, !searchTerm.isEmpty else { return }
         SearchController.search(searchTerm: searchTerm, page: page) { [weak self] (photos) in
             guard let this = self else { return }
             
@@ -69,9 +91,15 @@ extension PhotoListInteractor: UISearchBarDelegate {
                 return
             }
             
-            this.photos = photos
+            if this.page == 0 {
+                this.photos = photos
+            } else {
+                this.photos += photos
+            }
             this.photoListViewController.tableView.reloadData()
-            this.photoListViewController.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
+            if this.page == 0 {
+                this.photoListViewController.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
+            }
         }
     }
 }
